@@ -19,3 +19,9 @@
   <strong>Price:</strong>
   <%= @menu_item.category %>
 </p>
+
+<%= render 'comments/form', menu_item: @menu_item %>
+
+<% @menu_item.comments.each do |comment| %>
+  <%= comment.body %><br />
+<% end %>

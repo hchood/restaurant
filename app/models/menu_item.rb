@@ -1,6 +1,9 @@
 class MenuItem < ActiveRecord::Base
   CATEGORIES = %w{Seafood Pasta Vegetarian}
 
+  has_many :comments,
+    inverse_of: :menu_item
+
   validates_presence_of :name
   validates_presence_of :description
   validates_presence_of :price_in_cents
