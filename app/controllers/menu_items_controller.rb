@@ -23,6 +23,19 @@ class MenuItemsController < ApplicationController
     end
   end
 
+  def edit
+    @menu_item = MenuItem.find(params[:id])
+  end
+
+  def update
+    @menu_item = MenuItem.find(params[:id])
+    if @menu_item.update(menu_item_params)
+      redirect_to menu_item_path(@menu_item)
+    else
+    end
+
+  end
+
   def destroy
     @menu_item = MenuItem.find(params[:id])
     @menu_item.destroy
@@ -35,6 +48,6 @@ class MenuItemsController < ApplicationController
   end
 
   def menu_item_params
-    params.require(:menu_item).permit(:name, :description, :price_in_cents)
+    params.require(:menu_item).permit(:name, :description, :price_in_cents, :category)
   end
 end
