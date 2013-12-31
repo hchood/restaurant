@@ -2,4 +2,5 @@
 
 <%- menu_items.each do |menu_item| -%>
   <%= menu_item.name %>
+  <%= link_to "Destroy #{menu_item.name}", menu_item_path(menu_item), method: :delete %>
 <%- end -%>

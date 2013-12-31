@@ -23,12 +23,18 @@ class MenuItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @menu_item = MenuItem.find(params[:id])
+    @menu_item.destroy
+    redirect_to menu_items_path, notice: "Menu item was successfully destroyed"
+  end
+
   private
   def menu_items
     @menu_items ||= MenuItem.all
   end
 
-  def menu_item_params 
+  def menu_item_params
     params.require(:menu_item).permit(:name, :description, :price_in_cents)
   end
 end
