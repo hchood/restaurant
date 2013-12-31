@@ -1,0 +1,16 @@
+<h1>HERE IS THE MENU ITEM INDEX PAGE</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+  <% @menu_items.each do |item| %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.description %></td>
+    <td><%= "$#{item.price_in_dollars}" %></td>
+  </tr>
+  <% end %>
+</table>
