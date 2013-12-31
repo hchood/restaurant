@@ -23,7 +23,6 @@ describe 'a user adds a new menu item' do
       select category, from: "Category"
       click_on "Create Menu item"
 
-      save_and_open_page
       expect(page).to have_content name
       expect(page).to have_content description
       expect(page).to have_content "$10.01"
