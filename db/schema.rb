@@ -11,14 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131231165658) do
+ActiveRecord::Schema.define(version: 20131231170442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "categories", force: true do |t|
-    t.string "name", null: false
-  end
 
   create_table "menu_items", force: true do |t|
     t.string   "name",           null: false
@@ -26,7 +22,7 @@ ActiveRecord::Schema.define(version: 20131231165658) do
     t.string   "price_in_cents", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
+    t.string   "category"
   end
 
 end
