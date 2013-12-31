@@ -13,8 +13,6 @@ class MenuItemsController < ApplicationController
   end
 
   def create
-    # params[:menu_item][:price_in_cents] = params[:menu_item][:price_in_cents].to_i
-
     @menu_item = MenuItem.new(menu_item_params)
     if @menu_item.save
       redirect_to menu_item_path(@menu_item)
