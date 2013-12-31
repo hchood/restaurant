@@ -8,6 +8,8 @@ class MenuItem < ActiveRecord::Base
 
   validates_inclusion_of :category, in: CATEGORIES
 
+  has_many :comments
+
   def price_in_dollars
     (price_in_cents.to_f / 100).round(2)
   end
