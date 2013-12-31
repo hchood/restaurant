@@ -1,0 +1,23 @@
+<%= form_for @menu_item do |f| %>
+
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
+
+<div>
+  <%= f.label :price_in_cents %>
+  <%= f.text_field :price_in_cents %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+
+<% end %>
