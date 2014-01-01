@@ -1,6 +1,7 @@
 Restaurant::Application.routes.draw do
-  resources :menu_items
-
+  resources :menu_items do
+    resources :comments, only: [:index, :create] # why is this necessary to be able to create a new comment?
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -41,7 +42,7 @@ Restaurant::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
